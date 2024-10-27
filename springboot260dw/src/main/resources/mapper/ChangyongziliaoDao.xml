@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChangyongziliaoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChangyongziliaoEntity" id="changyongziliaoMap">
+        <result property="ziliaomingcheng" column="ziliaomingcheng"/>
+        <result property="ziliaoleixing" column="ziliaoleixing"/>
+        <result property="ziliaotupian" column="ziliaotupian"/>
+        <result property="ziliaofujian" column="ziliaofujian"/>
+        <result property="ziliaoneirong" column="ziliaoneirong"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChangyongziliaoVO" >
+		SELECT * FROM changyongziliao  changyongziliao         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChangyongziliaoVO" >
+		SELECT  changyongziliao.* FROM changyongziliao  changyongziliao 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChangyongziliaoView" >
+
+		SELECT  changyongziliao.* FROM changyongziliao  changyongziliao 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChangyongziliaoView" >
+		SELECT * FROM changyongziliao  changyongziliao <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
